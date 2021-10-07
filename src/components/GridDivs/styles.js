@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import colors from '../data/colors'
 
 export const Container = styled.div`
   height: 100vh;
@@ -12,7 +13,23 @@ export const Grid = styled.div`
   grid-template-columns: repeat(${props => props.cantColumns || 10}, 1fr);
 
   .blue {
-    background: blue;
+    background: ${colors.blue.cod};
+  }
+
+  .red {
+    background: ${colors.red.cod};
+  }
+
+  .green {
+    background: ${colors.green.cod};
+  }
+
+  .yellow {
+    background: ${colors.yellow.cod};
+  }
+
+  .purple {
+    background: ${colors.purple.cod};
   }
 `
 

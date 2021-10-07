@@ -1,17 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Container, Grid, Cell } from './styles'
 
 function GridDivs() {
   const cantColumns = 100
+
+  const [currentColor, setCurrentColor] = useState('blue')
 
   const cantRows = useRef(
     Math.floor(window.innerHeight / (window.innerWidth / cantColumns))
   )
 
   const handleClick = e => {
-    console.log(e.target.id)
     const cell = document.getElementById(e.target.id)
-    cell.className += ' blue'
+    cell.className += ` ${currentColor}`
   }
 
   return (
