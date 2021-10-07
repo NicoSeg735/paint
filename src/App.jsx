@@ -1,5 +1,7 @@
+import GridDivs from './components/GridDivs'
+
 function App() {
-  return <div>Paint</div>
+  return <GridDivs />
 }
 
 export default App
