@@ -13,23 +13,23 @@ export const Grid = styled.div`
   grid-template-columns: repeat(${props => props.cantColumns || 10}, 1fr);
 
   .blue {
-    background: ${colors.blue.cod};
+    background: ${colors[0].cod};
   }
 
   .red {
-    background: ${colors.red.cod};
+    background: ${colors[1].cod};
   }
 
   .green {
-    background: ${colors.green.cod};
+    background: ${colors[2].cod};
   }
 
   .yellow {
-    background: ${colors.yellow.cod};
+    background: ${colors[3].cod};
   }
 
   .purple {
-    background: ${colors.purple.cod};
+    background: ${colors[4].cod};
   }
 `
 
