@@ -4,43 +4,53 @@ import { Container, Grid, Cell } from './styles'
 function Canvas({ currentColor, colors = [] }) {
   const cantColumns = 100
 
-  // const [isPainting, setIsPainting] = useState(false)
+  const isPressed = useRef(false)
   const isPainting = useRef(false)
 
   const cantRows = useRef(
     Math.floor(window.innerHeight / (window.innerWidth / cantColumns))
   )
 
-  const paintCell = id => {
-    let isPainted = false
-
+  const isPainted = id => {
     const cell = document.getElementById(id)
 
-    if (!cell.classList.contains(currentColor)) {
+    if (cell.classList.length > 2) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const paintCell = id => {
+    const cell = document.getElementById(id)
+    if (!isPainting.current) {
       colors.forEach(color => {
         if (cell.classList.contains(color.name)) {
-          isPainted = true
-          cell.classList.replace(color.name, currentColor)
+          cell.classList.remove(color.name)
           return
         }
       })
-      if (!isPainted) {
-        cell.className += ` ${currentColor}`
-      }
+    } else {
+      cell.className += ` ${currentColor}`
     }
   }
 
   const handlePressed = e => {
     if (e.type === 'mousedown') {
+      if (isPainted(e.target.id)) {
+        isPainting.current = false
+      } else {
+        isPainting.current = true
+      }
       paintCell(e.target.id)
-      isPainting.current = true
+      isPressed.current = true
     } else {
-      isPainting.current = false
+      isPressed.current = false
     }
   }
 
   const handleEnter = e => {
-    if (isPainting.current) {
+    if (isPressed.current) {
       paintCell(e.target.id)
     }
   }
