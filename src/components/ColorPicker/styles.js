@@ -14,4 +14,5 @@ export const Color = styled.div`
   background-color: ${props => props.cod};
   height: 50px;
   width: 50px;
+  cursor: pointer;
 `
