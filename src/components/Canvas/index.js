@@ -1,9 +1,14 @@
 import React, { useRef } from 'react'
 import { Container, Grid, Cell } from './styles'
 
-function Canvas({ currentColor, colors = [] }) {
-  const cantColumns = 100
-
+function Canvas({
+  cantColumns,
+  colors = [],
+  currentColor,
+  onContextMenu,
+  setIsContextOpen,
+  isContextOpen
+}) {
   const isPressed = useRef(false)
   const isPainting = useRef(false)
 
@@ -36,13 +41,17 @@ function Canvas({ currentColor, colors = [] }) {
   }
 
   const handlePressed = e => {
-    if (e.type === 'mousedown') {
+    if (e.type === 'mousedown' && e.button !== 2) {
       if (isPainted(e.target.id)) {
         isPainting.current = false
       } else {
         isPainting.current = true
       }
-      paintCell(e.target.id)
+      if (isContextOpen) {
+        setIsContextOpen(false)
+      } else {
+        paintCell(e.target.id)
+      }
       isPressed.current = true
     } else {
       isPressed.current = false
@@ -70,6 +79,7 @@ function Canvas({ currentColor, colors = [] }) {
             onMouseUp={handlePressed}
             onMouseEnter={handleEnter}
             onDragStart={handleDrag}
+            onContextMenu={e => onContextMenu(e, i)}
           />
         ))}
       </Grid>
