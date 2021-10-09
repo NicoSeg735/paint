@@ -1,6 +1,6 @@
 # Technical test for Carestino
 
-This project was developed with React JS y Styled Components.
+This project was developed with React JS y Styled Components.\
 You can run this app online in https://codesandbox.io/s/github/NicoSeg735/paint
 
 ## Available Scripts
@@ -50,8 +50,8 @@ Cuando una celda sea clickeada, la misma debe “activarse” cambiando de color
 
 Cuando una celda sea clickeada con el botón derecho del mouse, debería aparecer una ventana emergente donde usted pueda elegir un color. Se requiere un mínimo de 5 opciones de colores. El color elegido se convierte en el color por defecto para cada celda activada al dibujar.
 
-● El selector de color aparece (fadeIn) cuando usted presione el botón derecho del mouse en la posición que se encuentre el cursor.
-● El menú contextual específico del navegador no aparece al hacer clic con el botón derecho del mouse.
+● El selector de color aparece (fadeIn) cuando usted presione el botón derecho del mouse en la posición que se encuentre el cursor.\
+● El menú contextual específico del navegador no aparece al hacer clic con el botón derecho del mouse.\
 ● El selector de color desaparece (fadeOut) cuando el cursor se desplace fuera del mismo, o cuando un color sea seleccionado.
 
 Para facilitar el dibujo de imágenes, debe ser posible hacerlo arrastrando el cursor del mouse. Cuando una celda sea clickeada, se activa dicha función.
