@@ -41,19 +41,25 @@ function Canvas({
   }
 
   const handlePressed = e => {
+    // Actúa solo si no se presionó el click derecho
     if (e.type === 'mousedown' && e.button !== 2) {
+      // Consulta si la celda ya está pintada
+      // para saber si comienza a pintar o borrar
       if (isPainted(e.target.id)) {
         isPainting.current = false
       } else {
         isPainting.current = true
       }
+      // Si aún esta abierto el menú lo cierra
       if (isContextOpen) {
         setIsContextOpen(false)
       } else {
         paintCell(e.target.id)
       }
+      // Activa la función para pintar mientras esté presionado
       isPressed.current = true
     } else {
+      // Desactiva la función de pintar mientras esté presionado
       isPressed.current = false
     }
   }
@@ -65,12 +71,15 @@ function Canvas({
   }
 
   const handleDrag = e => {
+    // Desactiva la función por defecto de arrastre
     e.preventDefault()
   }
 
   return (
     <Container>
       <Grid cantColumns={cantColumns}>
+        {/* Genera las celdas según la cantidad de columnas definidas 
+        y el alto de la pantalla */}
         {[...Array(cantColumns * cantRows.current)].map((x, i) => (
           <Cell
             key={i}

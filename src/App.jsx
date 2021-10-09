@@ -12,8 +12,10 @@ function App() {
   const contextCoord = useRef({ x: 0, y: 0 })
 
   const handleContextMenu = (e, id) => {
+    // Desactiva el menú contextual por defecto
     e.preventDefault()
 
+    // Captura el tamaño del menú contextual custom
     const layoutWidth =
       document.getElementById('contextMenu').offsetWidth === 0
         ? 312
@@ -27,6 +29,7 @@ function App() {
     let newX = e.clientX
     let newY = e.clientY
 
+    // Reposiciona el menú si se clickea cerca de los límites
     if (window.innerWidth < newX + layoutWidth) {
       newX = newX - (newX + layoutWidth - window.innerWidth + 15)
     }

@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Technical test for Carestino
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed with React JS y Styled Components.
 
 ## Available Scripts
 
@@ -39,32 +39,22 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Requirements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La red consiste en pequeñas celdas cuadradas. Debe haber 100 celdas horizontales.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+El número de filas no debe exceder los límites de la ventana. Es decir, la pantalla debe estar llena de celdas, pero no deben existir barras de desplazamiento, ya que todas las celdas caben en la ventana.
 
-### Code Splitting
+Cuando una celda sea clickeada, la misma debe “activarse” cambiando de color. Al volver a clickear la celda, la misma debe desactivarse y removerse el color.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Cuando una celda sea clickeada con el botón derecho del mouse, debería aparecer una ventana emergente donde usted pueda elegir un color. Se requiere un mínimo de 5 opciones de colores. El color elegido se convierte en el color por defecto para cada celda activada al dibujar.
 
-### Analyzing the Bundle Size
+● El selector de color aparece (fadeIn) cuando usted presione el botón derecho del mouse en la posición que se encuentre el cursor.
+● El menú contextual específico del navegador no aparece al hacer clic con el botón derecho del mouse.
+● El selector de color desaparece (fadeOut) cuando el cursor se desplace fuera del mismo, o cuando un color sea seleccionado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Para facilitar el dibujo de imágenes, debe ser posible hacerlo arrastrando el cursor del mouse. Cuando una celda sea clickeada, se activa dicha función.
 
-### Making a Progressive Web App
+Todas las celdas por las que pase el cursor deben seleccionarse. Cuando se suelta el mouse, se desactiva la función de arrastre, y todas las celdas por las que pase el cursor ya no se verán modificadas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tener en cuenta que, de todas formas, debe continuar siendo posible clickear cada celda individualmente.

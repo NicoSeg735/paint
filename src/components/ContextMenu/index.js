@@ -15,16 +15,23 @@ function ContextMenu({
     setColor(e.target.id)
     setIsContextOpen(false)
 
-    const cell = document.getElementById(currentCell)
+    // Opcional
+    // Al elegir el color se le asigna el mismo a la celda clickeada previamente
 
-    colors.forEach(color => {
-      if (cell.classList.contains(color.name)) {
-        cell.classList.remove(color.name)
-        return
-      }
-    })
+    // const cell = document.getElementById(currentCell)
 
-    cell.className += ` ${e.target.id}`
+    // colors.forEach(color => {
+    //   if (cell.classList.contains(color.name)) {
+    //     cell.classList.remove(color.name)
+    //     return
+    //   }
+    // })
+
+    // cell.className += ` ${e.target.id}`
+  }
+
+  const handleMouseLeave = () => {
+    setIsContextOpen(false)
   }
 
   return (
@@ -33,6 +40,7 @@ function ContextMenu({
       y={y + 'px'}
       id='contextMenu'
       isContextOpen={isContextOpen}
+      onMouseLeave={handleMouseLeave}
     >
       {colors.map(color => (
         <Color
