@@ -1,6 +1,6 @@
 # Technical test for Carestino
 
-This project was developed with React JS y Styled Components.\
+This project was developed with React JS and Styled Components.\
 You can run this app online in https://codesandbox.io/s/github/NicoSeg735/paint
 
 ## Available Scripts
